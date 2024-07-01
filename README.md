@@ -3,11 +3,6 @@
 
 > **Note:** The project is built with `Python 3.9.1`, but should work with any version of Python higher than 3.6.
 
-## About This Repository
-
-This is a companion project to the [Build a Content Aggregator in Python](https://realpython.com/build-a-content-aggregator-python/) tutorial on _Real Python_.
-Visit the article to follow along or download the content of `source_code_final/` folder from this repository.
-
 ## How To Run The Project
 
 Create and activate a [Python virtual environment](https://realpython.com/python-virtual-environments-a-primer/) for your operating system and install the dependencies:
