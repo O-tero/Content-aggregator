@@ -55,7 +55,11 @@ def fetch_talkpython_episodes():
     """Fetches new episodes from RSS for the Talk Python to Me Podcast."""
     _feed = feedparser.parse("https://talkpython.fm/episodes/rss")
     save_new_episodes(_feed)
-
+    
+def fetch_clockwise_episodes():
+    """Fetches new episodes from RSS for the Clockwise Podcast."""
+    _feed = feedparser.parse("https://www.relay.fm/clockwise/feed")
+    save_new_episodes(_feed)
 
 def delete_old_job_executions(max_age=604_800):
     """Deletes all apscheduler job execution logs older than `max_age`."""
@@ -89,6 +93,16 @@ class Command(BaseCommand):
             replace_existing=True,
         )
         logger.info("Added job: Talk Python Feed.")
+        
+        scheduler.add_job(
+            fetch_clockwise_episodes,
+            trigger="interval",
+            minutes=2,
+            id="Clockwise Feed",
+            max_instances=1,
+            replace_existing=True,
+        )
+        logger.info("Added job: Clockwise Feed.")
 
         scheduler.add_job(
             delete_old_job_executions,
