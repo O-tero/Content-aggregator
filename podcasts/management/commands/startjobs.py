@@ -63,7 +63,7 @@ def fetch_clockwise_episodes():
     save_new_episodes(_feed)
     
 def fetch_darknetdiaries_episodes():
-    """Fetches new episodes from RSS for the Code Story Podcast."""
+    """Fetches new episodes from RSS for the Darknetdiaries Podcast."""
     _feed = feedparser.parse("https://podcast.darknetdiaries.com/")
     save_new_episodes(_feed)
 
